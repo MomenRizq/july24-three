@@ -10,10 +10,9 @@ export default function StudentInfo({ student }) {
     name,
     id,
     code,
-    batna,
-    infection,
-    first_aids,
-    anatomy,
+    women,
+    pharma,
+    medical,
     total
   } = student
 
@@ -44,10 +43,9 @@ export default function StudentInfo({ student }) {
 
   function isPassed() {
     if (
-      parseInt(batna) >= 25 &&
-      parseInt(anatomy) >= 25 &&
-      parseInt(first_aids) >= 15 && 
-      parseInt(infection) >= 15
+      parseInt(women) >= 25 &&
+      parseInt(pharma) >= 25 &&
+      parseInt(medical) >= 25 
     ) {
       return 'success'
     }
@@ -103,7 +101,7 @@ export default function StudentInfo({ student }) {
 
 
       <h3 className="section__title">
-        نتيجة الترم الثانى
+        نتيجة الترم الثالث
       </h3>
 
       <Table aria-label="Example static collection table" >
@@ -116,11 +114,11 @@ export default function StudentInfo({ student }) {
 
           <TableRow key="1">
             <TableCell className="font-medium">
-              التمريض الباطنى و الجراحى
+              تمريض النساء و الاطفال
             </TableCell>
             <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(batna, 50)}>
-              {getStatus(batna, 50)}
+              <Chip className="text-white font-bold" color={getColor(women, 50)}>
+              {getStatus(women, 50)}
               </Chip>
             </TableCell>
             <TableCell className="text-center">50</TableCell>
@@ -128,11 +126,11 @@ export default function StudentInfo({ student }) {
 
           <TableRow key="2">
             <TableCell className="font-medium">
-              التشريح
+              الفارما
             </TableCell>
             <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(anatomy, 50)}>
-                {getStatus(anatomy, 50)}
+              <Chip className="text-white font-bold" color={getColor(pharma, 50)}>
+                {getStatus(pharma, 50)}
               </Chip>
             </TableCell>
             <TableCell className="text-center">50</TableCell>
@@ -140,29 +138,17 @@ export default function StudentInfo({ student }) {
 
           <TableRow key="3">
             <TableCell className="font-medium">
-              الاسعافات الأولية
+              التحاليل الطبية
             </TableCell>
             <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(first_aids, 30)}>
-                {getStatus(first_aids, 30)}
+              <Chip className="text-white font-bold" color={getColor(medical, 50)}>
+                {getStatus(medical, 50)}
               </Chip>
             </TableCell>
             <TableCell className="text-center">30</TableCell>
           </TableRow>
 
           <TableRow key="4">
-            <TableCell className="font-medium">
-              مكافحة العدوى
-            </TableCell>
-            <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(infection, 30)}>
-                {getStatus(infection, 30)}
-              </Chip>
-            </TableCell>
-            <TableCell className="text-center">30</TableCell>
-          </TableRow>
-
-          <TableRow key="5">
             <TableCell className="font-medium">المجموع الكلى</TableCell>
             <TableCell className="text-center">
               <Chip className="text-white font-bold" color={isPassed()} >
@@ -171,7 +157,7 @@ export default function StudentInfo({ student }) {
 
             </TableCell>
             <TableCell className="text-center">
-              160
+              150
             </TableCell>
           </TableRow>
 
