@@ -145,7 +145,7 @@ export default function StudentInfo({ student }) {
                 {getStatus(medical, 50)}
               </Chip>
             </TableCell>
-            <TableCell className="text-center">30</TableCell>
+            <TableCell className="text-center">50</TableCell>
           </TableRow>
 
           <TableRow key="4">
